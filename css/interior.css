@@ -12,7 +12,7 @@
 }
 body { 
     padding: 10px; 
-    background-color: #8e8e8e;
+    background-color: #000;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Sumana';
@@ -69,6 +69,13 @@ nav a:hover::after, a.active::after {
     height: 3px;
     margin-top: 1px;
 }
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
 
 /* Interior Design */
 .showcase {
@@ -100,10 +107,39 @@ nav a:hover::after, a.active::after {
     height: 100%;
     background: #000;
 }
+.more { font-weight: bold; }
+.more span {
+    position: relative;
+    top: 8px;
+    left: 2px;
+}
+.hero { width: 100%; }
+
+.interior { position: relative; }
+.interior .icon {
+    width: 60px;
+    border-radius: 50%;
+}
+.designer {
+    width: 460px;
+    background-color: #000;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    padding: 30px;
+}
+.designer h3 { font-size: 1em; }
+.designer span { display: block; }
+.designer .name { 
+    margin-top: 12px;
+    margin-bottom: -10px; 
+}
+.position { color: #828282; }
 
 /* Queries */
 @media only screen and (min-width: 0px) and (max-width: 600px) {
-    .clear { margin-bottom: 2%;  }
+    .clear { margin-bottom: 2%; }
+    .clear.lg { margin-bottom: 20px; }
     h1 { font-size: 2.4em; }
     h3 { font-size: 1.4em; }
     header { padding: 15px; }
@@ -116,19 +152,35 @@ nav a:hover::after, a.active::after {
     }
     #menu.menu-opened ul { 
         display: block; 
-        margin-top: 40%;
+        position: absolute;
+        padding: 0;
+        top: 30%;
+        left: 0;
+        width: 100%;
+        text-align: center;
     }
     #menu.menu-opened ul li {
         clear: both;
         width: 100%;
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
     nav a:hover::after, a.active::after {
         width: 25%;
         margin: 1px auto 0;
     }
-    #menu-toggle { display: block; }    
+    #menu-toggle { display: block; }  
+    .row>* {
+        width: auto;
+    }
+    .designer {
+        width: 260px;
+        bottom: -100px;
+        right: 36px;
+        padding: 30px;
+        font-size: 0.9em;
+    }
+    .designer .position { margin-bottom: 5px; }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 800px) {
@@ -138,5 +190,12 @@ nav a:hover::after, a.active::after {
     header { padding: 15px; }
     .showcase {
         font-size: 0.9em;
+    }
+    #menu ul li { margin-right: 40px; }
+    .designer {
+        width: 320px;
+        bottom: -40px;
+        right: 36px;
+        padding: 30px;
     }
 }
